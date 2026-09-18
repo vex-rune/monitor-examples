@@ -72,7 +72,7 @@ start_service "user-service"        "$JAVA_DIR/user-service/target/user-service.
 sleep 1
 start_service "order-service"       "$JAVA_DIR/order-service/target/order-service.jar"      8082 "order-service"
 sleep 1
-start_service "payment-service"     "$JAVA_DIR/payment-service/target/payment-service.jar"  8083 "payment-service"
+start_service "payment-service"     "$JAVA_DIR/payment-service/target/payment-service.jar"  9083 "payment-service"
 sleep 1
 start_service "notification-service" "$JAVA_DIR/notification-service/target/notification-service.jar" 8084 "notification-service"
 
@@ -84,7 +84,7 @@ echo ""
 echo "服务地址："
 echo "  用户中心:    http://localhost:8081/api/user/list"
 echo "  订单中心:    http://localhost:8082/api/order/list"
-echo "  支付中心:    http://localhost:8083/api/payment/list"
+echo "  支付中心:    http://localhost:9083/api/payment/list"
 echo "  通知中心:    http://localhost:8084/api/notification/list"
 echo "  OpenObserve: http://localhost:5080"
 echo ""

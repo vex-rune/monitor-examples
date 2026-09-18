@@ -1,11 +1,11 @@
 server:
-  port: 8083
+  port: 9083
 
 spring:
   application:
     name: payment-service
   datasource:
-    url: jdbc:mysql://localhost:13306/skyowl?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:23306/skyowl?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: skyowl
     password: skyowl123
     driver-class-name: com.mysql.cj.jdbc.Driver

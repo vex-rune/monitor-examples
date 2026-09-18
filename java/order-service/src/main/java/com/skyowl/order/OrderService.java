@@ -204,10 +204,14 @@ public class OrderService {
         event.setSourceService(SERVICE_NAME);
         event.setTraceId(MDC.get("trace_id"));
 
-        rabbit.convertAndSend(
+        eventPublisher.publish(
             MessageBusConfig.ORDER_EXCHANGE,
             MessageBusConfig.ORDER_PAYING_RK,
             event);
+
+        log.info("OrderPaying event published: orderNo={}", orderNo);
+        return Map.of("orderNo", orderNo, "action", "PAYING_DISPATCHED");
+    }
 
     public List<Map<String, Object>> listOrders(int limit) {
         return jdbc.queryForList(
