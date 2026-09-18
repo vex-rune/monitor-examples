@@ -1,4 +1,4 @@
-$PROJECT_ROOT = "C:\workspace\skywalking-monitor-examples"
+$PROJECT_ROOT = "C:\workspace\monitor-examples"
 $JAVA_DIR = Join-Path $PROJECT_ROOT "java"
 $OTEL_AGENT = Join-Path $PROJECT_ROOT "agent\opentelemetry-javaagent.jar"
 $LOG_DIR = Join-Path $PROJECT_ROOT "ops\logs"

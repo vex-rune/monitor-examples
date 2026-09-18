@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.skyowl</groupId>
-    <artifactId>skyowl-microservices</artifactId>
+    <artifactId>monitor-examples-microservices</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
