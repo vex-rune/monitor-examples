@@ -1,0 +1,7 @@
+com\skyowl\common\mq\EventPublisher.class
+com\skyowl\common\event\PaymentResultEvent.class
+com\skyowl\common\event\BaseEvent.class
+com\skyowl\common\event\OrderPayingEvent.class
+com\skyowl\common\mq\MessageBusConfig.class
+com\skyowl\common\event\UserCreatedEvent.class
+com\skyowl\common\event\OrderCreatedEvent.class

@@ -1,0 +1,18 @@
+# Maven
+*/target/
+!*/pom.xml
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# SkyWalking Agent (手动下载)
+agent/skywalking-agent/
+agent/*.tar.gz

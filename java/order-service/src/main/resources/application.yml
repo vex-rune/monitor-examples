@@ -1,0 +1,38 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:13306/skyowl?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: skyowl
+    password: skyowl123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      pool-name: OrderServiceHikariPool
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3000
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: skyowl
+    password: skyowl123
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.skyowl: DEBUG
+    root: INFO

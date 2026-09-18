@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>{"timestamp":"%d{yyyy-MM-dd HH:mm:ss.SSS}","thread":"%thread","level":"%level","logger":"%logger{36}","trace_id":"%mdc{trace_id:-}","span_id":"%mdc{span_id:-}","message":"%msg"}%n</pattern>
+
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="com.skyowl" level="DEBUG" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.hibernate" level="WARN" />
+    <logger name="io.opentelemetry" level="WARN" />
+</configuration>
