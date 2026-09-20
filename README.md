@@ -1,4 +1,4 @@
-# SkyOwl Monitor
+# vex Monitor
 
 基于 **Spring Boot 3.2 + Java 21 + OpenTelemetry Java Agent + OpenObserve** 的零侵入分布式监控示例。
 
@@ -25,7 +25,7 @@
 │  └─────┬──────┘    └─────┬──────┘    └─────┬──────┘    └────┬─────┘│
 │        │                 │                  │                │      │
 │        └─────────────────┴──── RabbitMQ ────┴────────────────┘      │
-│                              (skyowl exchange)                       │
+│                              (vex exchange)                       │
 └───────────────────────────────────────────────────────────────────────┘
               │                              │
               ▼                              ▼
@@ -63,7 +63,7 @@ monitor-examples/
 │   └── opentelemetry-javaagent.jar   # OTel Java Agent 2.4.0
 └── java/                      # Maven 多模块项目
     ├── pom.xml
-    ├── skyowl-common/         # 共享 MQ 配置、Event 基类
+    ├── vex-common/         # 共享 MQ 配置、Event 基类
     ├── user-service/          # 端口 8081
     ├── order-service/         # 端口 8082
     ├── payment-service/       # 端口 9083
@@ -80,7 +80,7 @@ monitor-examples/
 | 日志关联 | **OTel Agent 自动注入 trace_id 到 MDC** | 业务代码 0 改动，通过 `-Dotel.logs.exporter=otlp` 直接上报 OpenObserve |
 | 消息总线 | **RabbitMQ 3 management** | 跨服务 trace_id 传递通过 `BaseEvent.traceId` 字段 + MQ Header |
 | 端口规划 | 8081/8082/**9083**/8084 | payment-service 改用 9083，避开与现有 iot-test-emqx (8083) 端口冲突 |
-| 共享 DB | MySQL 单实例多 schema | 4 服务复用一张 `skyowl` 库下的多张表 |
+| 共享 DB | MySQL 单实例多 schema | 4 服务复用一张 `vex` 库下的多张表 |
 
 ---
 
@@ -93,7 +93,7 @@ monitor-examples/
   - 默认账号 `admin@example.com / Admin@123456`
 - ✅ **MySQL 8.0** 容器
   - 端口映射 `23306:3306`（注：原计划 13306，被 Windows Hyper-V 占用，改用 23306）
-  - 数据库 `skyowl`，用户 `skyowl / skyowl123`
+  - 数据库 `vex`，用户 `vex / vex123`
   - 健康检查通过后启动应用
 - ✅ **Redis 7** 容器，端口 `6379`
 - ✅ **RabbitMQ 3-management** 容器，端口 `5672 / 15672`
@@ -103,7 +103,7 @@ monitor-examples/
 
 共 5 个 Maven 模块：
 
-#### skyowl-common (共享)
+#### vex-common (共享)
 - ✅ `BaseEvent` — 所有 MQ 事件的基类（携带 `traceId`、`sourceService`）
 - ✅ `UserCreatedEvent / OrderCreatedEvent / OrderPayingEvent / PaymentResultEvent`
 - ✅ `MessageBusConfig` — 4 个 exchange / queue / binding 统一定义
@@ -212,8 +212,8 @@ docker compose up -d
 
 # 2. 等待 MySQL 就绪后初始化 schema（首次）
 sleep 30
-docker exec -i skyowl-mysql mysql -uskyowl -pskyowl123 skyowl \
-  < ../java/skyowl-common/src/main/resources/schema.sql
+docker exec -i vex-mysql mysql -uvex -pvex123 vex \
+  < ../java/vex-common/src/main/resources/schema.sql
 
 # 3. 编译 Java 项目
 cd ../java

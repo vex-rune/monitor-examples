@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.skyowl</groupId>
-        <artifactId>monitor-examples-microservices</artifactId>
+        <groupId>com.vex</groupId>
+        <artifactId>monitor-examples</artifactId>
         <version>1.0.0</version>
     </parent>
 
@@ -13,8 +13,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.skyowl</groupId>
-            <artifactId>skyowl-common</artifactId>
+            <groupId>com.vex</groupId>
+            <artifactId>monitor-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,7 +50,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.skyowl.notification.NotificationServiceApplication</mainClass>
+                    <mainClass>com.vex.notification.NotificationServiceApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

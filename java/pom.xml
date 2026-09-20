@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.skyowl</groupId>
-    <artifactId>monitor-examples-microservices</artifactId>
+    <groupId>com.vex</groupId>
+    <artifactId>monitor-examples</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
@@ -21,7 +21,7 @@
     </properties>
 
     <modules>
-        <module>skyowl-common</module>
+        <module>monitor-common</module>
         <module>user-service</module>
         <module>order-service</module>
         <module>payment-service</module>
@@ -31,8 +31,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.skyowl</groupId>
-                <artifactId>skyowl-common</artifactId>
+                <groupId>com.vex</groupId>
+                <artifactId>monitor-common</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>

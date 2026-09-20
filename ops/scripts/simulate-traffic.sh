@@ -1,5 +1,5 @@
 #!/bin/bash
-# SkyOwl 4 个微服务综合业务压测脚本
+# vex 4 个微服务综合业务压测脚本
 # 覆盖：正常请求 / 错误请求 / 并发请求
 # 用途：验证 OpenObserve 中的 trace + log 关联
 

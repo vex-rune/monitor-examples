@@ -1,4 +1,4 @@
-# SkyOwl 4 微服务综合压测脚本 (PowerShell)
+# vex 4 微服务综合压测脚本 (PowerShell)
 # 覆盖：正常请求 / 错误请求 / 并发请求 / 突发流量
 # 用途：验证 OpenObserve 中 trace + log 关联、错误上报
 

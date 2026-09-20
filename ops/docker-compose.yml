@@ -19,14 +19,14 @@ services:
   # 中间件
   mysql:
     image: mysql:8.0
-    container_name: skyowl-mysql
+    container_name: vex-mysql
     ports:
       - "23306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root123
-      - MYSQL_DATABASE=skyowl
-      - MYSQL_USER=skyowl
-      - MYSQL_PASSWORD=skyowl123
+      - MYSQL_DATABASE=vex
+      - MYSQL_USER=vex
+      - MYSQL_PASSWORD=vexwl123
     volumes:
       - mysql-data:/var/lib/mysql
     healthcheck:
@@ -38,7 +38,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: skyowl-redis
+    container_name: vex-redis
     ports:
       - "6379:6379"
     command: redis-server --appendonly yes
@@ -53,13 +53,13 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
-    container_name: skyowl-rabbitmq
+    container_name: vex-rabbitmq
     ports:
       - "5672:5672"
       - "15672:15672"
     environment:
-      - RABBITMQ_DEFAULT_USER=skyowl
-      - RABBITMQ_DEFAULT_PASS=skyowl123
+      - RABBITMQ_DEFAULT_USER=vex
+      - RABBITMQ_DEFAULT_PASS=vex123
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq
     healthcheck:

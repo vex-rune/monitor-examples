@@ -1,5 +1,5 @@
 @echo off
-REM SkyOwl 4 services startup (Windows)
+REM VEX 4 services startup (Windows)
 REM Each service starts in a separate window via 'start /B' so they survive parent shell exit.
 
 setlocal
@@ -31,7 +31,7 @@ set "JAVA_OPTS_BASE=-javaagent:\"%OTEL_AGENT%\" -Dotel.exporter.otlp.endpoint=%O
 set "JAVA_BIN=java"
 
 echo ==========================================
-echo   SkyOwl Microservices (Windows)
+echo   VEX Microservices (Windows)
 echo ==========================================
 echo   OTel Endpoint: %OTEL_ENDPOINT%
 echo   Log Dir:       %LOG_DIR%

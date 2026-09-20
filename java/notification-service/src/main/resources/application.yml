@@ -5,9 +5,9 @@ spring:
   application:
     name: notification-service
   datasource:
-    url: jdbc:mysql://localhost:23306/skyowl?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: skyowl
-    password: skyowl123
+    url: jdbc:mysql://localhost:23306/vex?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: vex
+    password: vex123
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
@@ -15,8 +15,8 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: skyowl
-    password: skyowl123
+    username: vex
+    password: vex123
 
 management:
   endpoints:
@@ -29,5 +29,5 @@ management:
 
 logging:
   level:
-    com.skyowl: DEBUG
+    com.vex: DEBUG
     root: INFO

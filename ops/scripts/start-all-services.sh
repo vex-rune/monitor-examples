@@ -1,5 +1,5 @@
 #!/bin/bash
-# 启动 SkyOwl 4 个微服务
+# 启动 vex 4 个微服务
 # 每个服务单独运行在不同端口，通过 RabbitMQ 串联
 
 set -e
@@ -61,7 +61,7 @@ for svc in user-service order-service payment-service notification-service; do
 done
 
 echo "=========================================="
-echo "  SkyOwl Microservices 启动"
+echo "  vex Microservices 启动"
 echo "=========================================="
 echo "  OTel Endpoint: $OTEL_ENDPOINT"
 echo "  Log Dir:       $LOG_DIR"

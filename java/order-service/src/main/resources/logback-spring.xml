@@ -11,7 +11,7 @@
         <appender-ref ref="STDOUT" />
     </root>
 
-    <logger name="com.skyowl" level="DEBUG" />
+    <logger name="com.vex" level="DEBUG" />
     <logger name="org.springframework" level="WARN" />
     <logger name="org.hibernate" level="WARN" />
     <logger name="io.opentelemetry" level="WARN" />
